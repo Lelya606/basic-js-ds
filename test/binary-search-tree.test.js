@@ -27,9 +27,9 @@ describe('Binary search tree', () => {
       expect(instance).to.respondTo('add');
       expect(instance).to.respondTo('find');
       expect(instance).to.respondTo('has');
-      // expect(instance).to.respondTo('remove');
-      // expect(instance).to.respondTo('min');
-      // expect(instance).to.respondTo('max');
+      expect(instance).to.respondTo('remove');
+      expect(instance).to.respondTo('min');
+      expect(instance).to.respondTo('max');
     });
   });
 
@@ -112,12 +112,12 @@ describe('Binary search tree', () => {
       // assert.strictEqual(tree.has(14), false);
       // assert.strictEqual(tree.has(8), false);
       // assert.strictEqual(tree.has(9), false);
-      // assert.strictEqual(tree.has(2), true);
-      // assert.strictEqual(tree.has(6), true);
-      // assert.strictEqual(tree.has(128), true);
-      // assert.strictEqual(tree.has(31), true);
-      // assert.strictEqual(tree.has(54), true);
-      // assert.strictEqual(tree.has(1), true);
+      assert.strictEqual(tree.has(2), true);
+      assert.strictEqual(tree.has(6), true);
+      assert.strictEqual(tree.has(128), true);
+      assert.strictEqual(tree.has(31), true);
+      assert.strictEqual(tree.has(54), true);
+      assert.strictEqual(tree.has(1), true);
     });
 
     it.optional('min works correctly', () => {
@@ -132,7 +132,7 @@ describe('Binary search tree', () => {
       tree.add(1);
       tree.remove(6);
       tree.remove(2);
-      // assert.strictEqual(tree.min(), 1);
+      assert.strictEqual(tree.min(), 1);
     });
 
     it.optional('max works correctly', () => {
@@ -147,7 +147,7 @@ describe('Binary search tree', () => {
       tree.add(1);
       tree.remove(6);
       tree.remove(2);
-      // assert.strictEqual(tree.max(), 54);
+      assert.strictEqual(tree.max(), 54);
     });
 
   });
@@ -157,8 +157,8 @@ describe('Binary search tree', () => {
       const { values, min, max } = getTestingTools(20);
       const tree = new BinarySearchTree();
       values.forEach(value => tree.add(value));
-      // assert.strictEqual(tree.min(), min);
-      // assert.strictEqual(tree.max(), max);
+      assert.strictEqual(tree.min(), min);
+      assert.strictEqual(tree.max(), max);
     });
 
     it.optional('correctly find values', () => {
@@ -176,7 +176,7 @@ describe('Binary search tree', () => {
       const valuesToRemove = values.splice(0, 10);
       valuesToRemove.forEach(value => tree.remove(value));
       // assert.strictEqual(valuesToRemove.every(value => tree.has(value) === false), true);
-      // assert.strictEqual(values.every(value => tree.has(value) === true), true);
+      assert.strictEqual(values.every(value => tree.has(value) === true), true);
     });
   });
 

@@ -1,7 +1,6 @@
 const { NotImplementedError } = require('../extensions/index.js');
 
 const { Node } = require('../extensions/list-tree.js');
-const {min} = require("mocha/lib/reporters");
 
 /**
 * Implement simple binary search tree according to task description
@@ -42,7 +41,7 @@ class BinarySearchTree {
   }
 
   has(data) {
-    return !!this.searchNode(this.nodeNew, data);
+    return Boolean(this.searchNode(this.nodeNew, data));
   }
 
   find(data) {
@@ -56,13 +55,13 @@ class BinarySearchTree {
 
   getMinNode(node) {
     if(!node) return null;
-    if(!node.left) return node;
+    if(!node.left) return node.data;
     return this.getMinNode(node.left);
   }
 
   getMAxNode(node) {
     if(!node) return null;
-    if(!node.right) return node;
+    if(!node.right) return node.data;
     return this.getMAxNode(node.right);
   }
 
